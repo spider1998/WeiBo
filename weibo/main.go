@@ -1,12 +1,13 @@
 package main
 
 import (
+	"WeiPro/weibo/app"
+	"WeiPro/weibo/handler"
 	"fmt"
-	"weibo/app"
-	"weibo/handler"
 )
 
 func main() {
+	//-----------------------------初始化配置---------------------------------------------------------------------
 	err := app.Init()
 	if err != nil {
 		fmt.Println(err)

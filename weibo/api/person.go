@@ -1,16 +1,17 @@
 package api
 
 import (
+	"WeiPro/weibo/app"
+	"WeiPro/weibo/code"
+	"WeiPro/weibo/entity"
 	"encoding/json"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"weibo/app"
-	"weibo/code"
-	"weibo/entity"
 )
 
+//拼接路由访问平台
 func GetWeibo(user, token string) (person entity.Personreq, err error) {
 	URL, err := url.Parse("https://api.weibo.com/2/users/show.json")
 	if err != nil {

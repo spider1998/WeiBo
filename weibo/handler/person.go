@@ -1,13 +1,15 @@
 package handler
 
 import (
-	"weibo/api"
-	"weibo/entity"
-	"weibo/service"
+	"WeiPro/weibo/api"
+	"WeiPro/weibo/app"
+	"WeiPro/weibo/entity"
+	"WeiPro/weibo/service"
 )
 
+//中间处理函数，获取人员，写入数据库
 func GetPerson(user string) (person entity.Personreq, err error) {
-	token := "2.005M2CdGDsxwmC737c94b50c0t5yfU"
+	token := app.Conf.AcccessToken //微博api测试令牌
 	person, err = api.GetWeibo(user, token)
 	if err != nil {
 		return

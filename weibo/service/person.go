@@ -3,10 +3,10 @@ package service
 import (
 	"github.com/go-ozzo/ozzo-dbx"
 	"github.com/pkg/errors"
-	"weibo/app"
-	"weibo/entity"
-	"weibo/util"
 	"strconv"
+	"WeiPro/weibo/app"
+	"WeiPro/weibo/entity"
+	"WeiPro/weibo/util"
 )
 
 func SavePerson(personreq entity.Personreq) (err error) {

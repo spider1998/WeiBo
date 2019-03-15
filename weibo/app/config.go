@@ -9,8 +9,6 @@ type Config struct {
 	Debug bool `json:"debug" default:"true"`
 	//数据库配置
 	Mysql     string `json:"mysql" default:"root:123456@tcp(192.168.35.193:3306)/weibo?charset=utf8mb4&parseTime=true"` // mysql DSN
-	Redis     string `json:"redis" default:"192.168.35.193:6379"`
-	LikeRedis string `json:"like_redis" default:"goblog"`
 	//日志配置
 	ConfPath string `json:"conf_path" default:"."` //日志文件路径
 	//公告密钥
