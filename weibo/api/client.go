@@ -1,8 +1,8 @@
 package api
 
 import (
-	"time"
 	"net/http"
+	"time"
 )
 
 var client = &http.Client{
@@ -12,4 +12,3 @@ var client = &http.Client{
 func Do(req *http.Request) (*http.Response, error) {
 	return client.Do(req)
 }
-

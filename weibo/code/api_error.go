@@ -51,4 +51,3 @@ func (e APIError) WithDetails(details interface{}) APIError {
 	e.Details = details
 	return e
 }
-
