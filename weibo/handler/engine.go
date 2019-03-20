@@ -2,6 +2,7 @@ package handler
 
 import (
 	"fmt"
+	"strconv"
 )
 
 /*运行程序后在终端输入要启用的服务（测试服务为person）和要爬取的微博昵称，用空格隔开
@@ -11,17 +12,28 @@ import (
 方法与测试基本相同
 ***/
 func Run() {
-	var Server, User string
-	fmt.Printf("Please enter your server name and user screen_name: ")
-	fmt.Scanln(&Server, &User) //Scanln 扫描来自标准输入的文本，将空格分隔的值依次存放到后续的参数内，直到碰到换行。
+	var Server, Args, Count string
+	fmt.Printf("Please enter your server name: ")
+	fmt.Scanln(&Server)
 
 	/*根据服务不同调取不同方法*/
 	if Server == "person" {
-		person, err := GetPerson(User)
+		fmt.Printf("Please enter user screen_name: ")
+		fmt.Scanln(&Args)
+		person, err := GetPerson(Args)
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(person)
+		fmt.Println(Args + strconv.Itoa(int(person.ID)) + "load over...")
+	}
+	if Server == "comments" {
+		fmt.Printf("Please enter weibo id and the count tha you want get: ")
+		fmt.Scanln(&Args, &Count)
+		_, err := GetComments(Args, Count)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(Args + "load over...")
 	}
 	/*if Server == "comment"{
 		body ...

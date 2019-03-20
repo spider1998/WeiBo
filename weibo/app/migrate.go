@@ -1,13 +1,14 @@
 package app
 
 import (
+	"WeiPro/weibo/entity"
 	_ "github.com/Go-SQL-Driver/mysql"
 	"github.com/jinzhu/gorm"
-	"WeiPro/weibo/entity"
 )
 
 var (
-	Person entity.Person
+	Person   entity.Person
+	Comments entity.Comments
 )
 
 func Migrate(dsn string) error {
@@ -17,6 +18,6 @@ func Migrate(dsn string) error {
 		Logger.Error().Err(err).Msg("DB connection error.")
 		panic(err)
 	}
-	err = db.AutoMigrate(&Person).Error
+	err = db.AutoMigrate(&Person,&Comments).Error
 	return err
 }
