@@ -1,3 +1,3 @@
 # go-weibo
 weibo spider
-Go language crawling Weibo(go语言爬取微博服务)
+Go language crawling Weibo(go语言搭建微博服务)
