@@ -11,6 +11,6 @@ var client = &http.Client{
 }
 
 func Do(req *http.Request) (*http.Response, error) {
-	fmt.Println("ddddd")
+	fmt.Println("dddddccccc")
 	return client.Do(req)
 }
